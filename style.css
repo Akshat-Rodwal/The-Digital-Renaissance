@@ -1,0 +1,451 @@
+:root {
+    --bg-color: #f2ebe3;
+    --text-main: #1a1a1a;
+    --card-bg: #eae2d9;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Inter", sans-serif;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.shell {
+    width: min(94vw, 1400px);
+    margin-inline: auto;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding-block: 1.5rem;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.06);
+}
+
+.brand {
+    background: var(--white);
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.brand img {
+    width: 50px;
+}
+
+.brand1 {
+    /* background: var(--white); */
+    width: 55px;
+    height: 55px;
+    /* display: grid; */
+    /* place-items: center; */
+    /* border-radius: 12px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); */
+}
+
+.brand1 img {
+    width: 50px;
+}
+
+.brand2 {
+    /* background: var(--white); */
+    margin-top: 15px;
+    /* display: grid; */
+    /* place-items: center; */
+    /* border-radius: 12px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03); */
+}
+
+.menu {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3rem;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.btn-signup {
+    background: #000;
+    color: #fff;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+}
+.divider {
+    color: #ccc;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    padding-top: 0rem;
+    min-height: 80vh;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "eyebrow eyebrow"
+        "title title"
+        "sub sub"
+        "cards start";
+    column-gap: 0.2rem;
+    align-items: center;
+    position: relative; /* anchor for decorative line */
+}
+.hero-content .eyebrow {
+    grid-area: eyebrow;
+}
+.hero-content .hero-title {
+    grid-area: title;
+}
+.hero-content .hero-sub {
+    grid-area: sub;
+}
+
+.eyebrow {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0rem;
+    color: var(--text-main);
+}
+
+.hero-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #362424 0%,
+        #6b4a3a 30%,
+        #a379b3 60%,
+        #362424 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    display: block;
+}
+
+.hero-sub {
+    max-width: 540px;
+    margin-bottom: 3rem;
+    font-size: 1.3rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-top: 1rem;
+    align-items: end;
+    margin-bottom: 0.2rem;
+    width: min(84%, 820px);
+    margin-inline: 0;
+    margin-right: auto;
+    grid-area: cards;
+}
+
+.nft-card {
+    background: var(--card-bg);
+    border-radius: 140px 140px 15px 15px;
+    border: 1.5px solid #e0d7cd;
+    text-align: center;
+    min-height: 230px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.nft-card:hover {
+    transform: translateY(-10px);
+}
+
+.nft-content {
+    padding: 1rem 0.6rem 0.7rem 0.6rem;
+    display: grid;
+    align-content: center;
+}
+
+.price-bg-container {
+    background: var(--white);
+    padding: 0.7rem 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    border-radius: 70px 70px 0 0;
+}
+
+.price-text {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #8a7e72;
+    letter-spacing: -0.02em;
+}
+
+.nft-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nft-img-wrapper img {
+    width: 100%;
+    max-width: 125px;
+    filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.25));
+    margin-bottom: 1rem;
+}
+
+.nft-info h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-top: 0.5rem;
+}
+
+.nft-info p {
+    font-size: 0.95rem;
+
+    font-weight: 500;
+}
+
+.price-pill {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 0.8rem 2.8rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #8a7e72;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+}
+
+.hero-visual {
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+    align-self: center;
+}
+
+.hero-visual > * {
+    grid-area: stack;
+}
+
+.bg-text {
+    writing-mode: vertical-rl;
+    font-size: clamp(6rem, 10vw, 11rem);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    justify-self: end;
+    letter-spacing: 0.5rem;
+}
+
+.cracked-hand {
+    width: 110%;
+    align-self: end;
+    z-index: 2;
+    transform: translateX(5%);
+}
+
+.floating-stone {
+    width: 55%;
+    justify-self: end;
+    align-self: start;
+    margin-top: -30px;
+    margin-right: 15%;
+    z-index: 3;
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.2));
+}
+
+.barcode-container {
+    align-self: end;
+    justify-self: end;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+    margin-right: -1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+    z-index: 4;
+}
+
+.nft-card img {
+    width: 100%;
+    height: auto;
+}
+.nft-card h3 {
+    font-weight: 700;
+}
+.nft-card p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.price {
+    background: var(--white);
+    padding: 0.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-start {
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 0.6rem;
+    white-space: nowrap;
+    background: #111;
+    color: #fff;
+    padding: 0.7rem 1.9rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: bold;
+    grid-area: start;
+    justify-self: start;
+    margin-left: -3rem;
+    margin-top: -1.2rem;
+}
+.btn-start .arrow {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+/* Decorative swoosh line like reference */
+.hero-swoosh {
+    position: absolute;
+    right: clamp(6%, 10vw, 18%);
+    top: clamp(8%, 12vw, 18%);
+    width: clamp(260px, 32vw, 520px);
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-swoosh path {
+    fill: none;
+    stroke: #d8d1cb;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+}
+.hero-visual {
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+    justify-items: end; /* place visuals on the right like reference */
+    align-items: end;
+}
+
+.hero-visual > * {
+    grid-area: stack;
+}
+
+.bg-text {
+    writing-mode: vertical-rl;
+    font-size: 9rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    justify-self: end;
+    align-self: center;
+}
+
+.cracked-hand {
+    width: 115%;
+    max-width: 596px;
+    align-self: end;
+    justify-self: end;
+    transform: translate(-6%, 6%) rotate(15deg);
+    z-index: 2;
+}
+
+.floating-stone {
+    width: 54%;
+    max-width: 340px;
+    justify-self: end;
+    align-self: start;
+    transform: translate(-80%, 39%) rotate(-14deg);
+    z-index: 3;
+}
+
+.barcode-container {
+    align-self: end;
+    justify-self: end;
+    background: color-mix(in srgb, var(--card-bg) 70%, transparent);
+    padding: 0.9rem;
+    border-radius: 38px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.4rem;
+    transform: translate(-10%, -6%);
+    z-index: 4;
+}
+
+.barcode-container img {
+    display: block;
+    width: clamp(384px, 36vw, 661px);
+    max-height: clamp(96px, 4.8vw, 94px);
+    height: auto;
+    background: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 25px;
+}
+
+.ticker {
+    padding-block: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.ticker-content {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    font-weight: 700;
+    opacity: 0.8;
+}
